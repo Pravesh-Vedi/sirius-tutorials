@@ -10,40 +10,32 @@ public class ValidStringProblem {
      * @param args
      */
     public static void main(String[] args) {
-        String inputString = "";
-        //int number = 4;
-       /* boolean isValidString = validateInputString(inputString);
-        System.out.println(isValidString);*/
-
-
-        int inputNumber = 4;
-        int result = calculateFactorial(inputNumber);
-        //int result_01 = calculateFactorial_01(inputNumber);
-        System.out.println("Result ::" + result);
+        System.out.println(isValid("()"));
+        System.out.println(isValid("()[]{}"));
+        System.out.println(isValid("(]"));
+        System.out.println(isValid("([)]"));
+        System.out.println(isValid("{[]}"));
+        System.out.println(isValid("({[])}"));
     }
 
-    /* private static int calculateFactorial_01(int inputNumber) {
-
-     }
- */
-    private static int calculateFactorial(int inputNumber) {
-        int result = 1;
-        if (inputNumber > 0) {
-            result = inputNumber * calculateFactorial(inputNumber - 1);
+    private static boolean isValid(String inputSting) {
+        // Stack to store left symbols
+        Stack<Character> leftSymbols = new Stack<>();
+        for (char inputChar : inputSting.toCharArray()) {
+            // If left symbol is encountered
+            if ('(' == inputChar || '{' == inputChar || '[' == inputChar) {
+                leftSymbols.push(inputChar);
+            } else if (')' == inputChar && !leftSymbols.isEmpty() && '(' == leftSymbols.peek()) {
+                leftSymbols.pop();
+            } else if ('}' == inputChar && !leftSymbols.isEmpty() && '{' == leftSymbols.peek()) {
+                leftSymbols.pop();
+            } else if (']' == inputChar && !leftSymbols.isEmpty() && '[' == leftSymbols.peek()) {
+                leftSymbols.pop();
+            } else {
+                return false;
+            }
         }
-        return result;
+        return leftSymbols.isEmpty();
     }
-
-    private static boolean validateInputString(String inputString) {
-        Stack<Character> stringStack = new Stack<>();
-        for (int i = 0; i < inputString.length(); i++) {
-            stringStack.push(inputString.charAt(i));//')'
-        }
-
-        return false;
-    }
-
-    //5*4*3*2
-    int number = 5;
-
 }
+
