@@ -1,6 +1,7 @@
 package questions.leetcode.array;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class NegativeBalance {
     public static void main(String[] args) {
@@ -47,6 +48,7 @@ public class NegativeBalance {
             debtMap.put(userDetails.get(1),debtMap.getOrDefault(userDetails.get(1),0)+Integer.parseInt(userDetails.get(2)));
         }
         int minimum = Collections.min(debtMap.values());
+        debtMap.entrySet().stream().filter(item->item.getValue()==minimum).collect(Collectors.toList()).forEach(item->System.out.print(item+" "));
         List<String>userList = new ArrayList<>();
 
         if(minimum>=0){
