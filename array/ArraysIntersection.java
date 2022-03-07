@@ -13,12 +13,10 @@ public class ArraysIntersection {
         System.out.println("\n");
 
         int[] numberArray = intersection_Case01(inputArray1, inputArray2);
-        int intersectionElement_01 = intersection_Case02(inputArray1, inputArray2);
-        int intersectionElement_02 = intersection_Case03(inputArray1, inputArray2);
+        intersection_Case03(inputArray1, inputArray2);
         for (int i : numberArray) {
             System.out.println("Element :: " + i);
         }
-        System.out.println("Intersection Element - Case01::" + intersectionElement_01 + " :: Case-02 :: " + intersectionElement_02);
     }
 
     private static int[] intersectionElement_04(int[] inputArray1, int[] inputArray2) {
@@ -46,50 +44,19 @@ public class ArraysIntersection {
         return resultArray;
     }
 
-    private static int intersection_Case03(int[] inputArray1, int[] inputArray2) {
+    private static void intersection_Case03(int[] inputArray1, int[] inputArray2) {
         Set<Integer> integerSet = new HashSet<>();
         for (int j : inputArray1) {
             integerSet.add(j);
         }
-        for (int i = 0; i < inputArray2.length; i++) {
-            if (integerSet.contains(inputArray2[i])) {
-                System.out.println("Element :: " + i);
-                return inputArray2[i];
+        for(int number : inputArray2){
+            if(integerSet.contains(number)){
+                System.out.println("Element case 03 :: " + number);
             }
         }
-
-        return 0;
     }
-
-    private static int intersection_Case02(int[] inputArray1, int[] inputArray2) {
-        return 0;
-    }
-
 
     private static int[] intersection_Case01(int[] inputArray1, int[] inputArray2) {
-       /* int numberArray[]= new int[inputArray1.length>inputArray2.length?inputArray1.length:inputArray2.length];
-        int k=0;
-        for(int i=0;i<inputArray1.length;i++){
-            for (int j=0;j<inputArray2.length;j++){
-                if(inputArray1[i]==inputArray2[j]){
-                    numberArray[k]=inputArray1[i];
-                    k++;
-                }
-            }
-        }
-        return Arrays.stream(numberArray).distinct().toArray();*/
-       /* HashSet<Integer> integerHashSet_01 = new HashSet<>();
-        for(int i = 0;i<inputArray1.length;i++){
-            integerHashSet_01.add(inputArray1[i]);
-        }
-        HashSet<Integer> integerHashSet_02 = new HashSet<>();
-        for(int j= 0; j<inputArray2.length; j++){
-            if(integerHashSet_01.contains(inputArray2[j])){
-                integerHashSet_02.add(inputArray2[j]);
-            }
-        }
-        return integerHashSet_02.stream().mapToInt(i->i).toArray();*/
-
         Arrays.sort(inputArray1);
         Arrays.sort(inputArray2);
 
