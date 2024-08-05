@@ -2,7 +2,7 @@ package questions.leetcode.array;
 
 public class SquareRoot {
     public static void main(String[] args) {
-        int inputNumber = 78;
+        int inputNumber = 36;
         System.out.println("Square Root is :: "+findSquareRoot(inputNumber));
     }
 

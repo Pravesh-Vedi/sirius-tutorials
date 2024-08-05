@@ -5,12 +5,12 @@ import java.util.List;
 
 public class GenerateParentheses {
     public static void main(String[] args) {
-        System.out.println("Generate Parentheses ::" + generateParentheses(4));
+        System.out.println("Generate Parentheses ::" + generateParentheses());
     }
 
-    private static List<String> generateParentheses(int number) {
+    private static List<String> generateParentheses() {
         List<String> stringList = new ArrayList<>();
-        generateString(stringList,"",0,0,number);
+        generateString(stringList,"",0,0, 4);
         return stringList;
     }
 

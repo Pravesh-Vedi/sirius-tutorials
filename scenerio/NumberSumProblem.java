@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class NumberSumProblem {
     public static void main(String[] args) {
-        int []inputArray = {2,7,11,15};//{2,3,4}
+        int []inputArray = {2,11,7,15};//{2,3,4}
         //Arrays.sort(inputArray);
         int sum = 9 ;
        // findSum(inputArray,sum);

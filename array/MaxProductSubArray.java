@@ -8,7 +8,7 @@ public class MaxProductSubArray {
     }
 
     private static int maxProductSubArray(int[] inputArray) {
-        if(inputArray.length<=0){
+        if(inputArray.length == 0){
             return -1;
         }else if(inputArray.length==1){
             return inputArray[0];

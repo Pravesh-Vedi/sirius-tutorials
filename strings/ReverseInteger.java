@@ -4,8 +4,8 @@ public class ReverseInteger {
     public static void main(String[] args) {
         int [] inputString = {2,1,4,7,4,8,3,6,4,7};
         reverseInteger(inputString);
-        for(int i = 0;i<inputString.length;i++){
-            System.out.println("Reversed String :: " +inputString[i]);
+        for (int j : inputString) {
+            System.out.println("Reversed String :: " + j);
         }
         
         int inputNumber = 2147483647;

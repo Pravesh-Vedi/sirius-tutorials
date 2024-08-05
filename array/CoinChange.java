@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class CoinChange {
     public static void main(String[] args) {
         int [] coinArray = {1,5,2,11};
-        int amount =11;
+        int amount = 17;
 
         int result = coinChange(coinArray,amount);
         System.out.println("Results :: " +result);
